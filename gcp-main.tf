@@ -16,11 +16,10 @@ resource "google_sql_database_instance" "g4_instance_playlist" {
   deletion_protection  = "true"
 }
 
-resource "google_artifact_registry_repository" "my-repo" {
+resource "google_artifact_registry_repository" "artifact_playlist" {
   provider = google-beta
   project = "hackathon-6aso-grupo04"
-  location = "us-central1"
-  repository_id = "my-repository-playlist"
+  repository_id = "g4-playlist"
   description = "Imagens Docker"
   format = "DOCKER"
 }

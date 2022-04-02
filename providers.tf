@@ -17,6 +17,6 @@ provider "google" {
 
 provider "google-beta" {
   project = "hackathon-6aso-grupo04"
-  region  = "us-west1"
-  zone    = "us-west1-b"
+  region  = "us-central1"
+  zone    = "us-central1-b"
 }
