@@ -1,13 +1,24 @@
-resource "google_app_engine_application" "my-app-6aso-fer" {
-  project     = "labdevopscloud-6aso-fer"
-  location_id = "us-central"
+resource "google_sql_database" "database-playlist" {
+  provider = google
+  name     = "playlist"
+  instance = google_sql_database_instance.instance.name
 }
 
-resource "google_artifact_registry_repository" "my-repo-6aso-fer" {
-  provider = google-beta
+# See versions at https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/sql_database_instance#database_version
+resource "google_sql_database_instance" "instance-playlist" {
+  provider = google
+  name             = "db-playlist"
+  database_version = "MYSQL_8_0"
+  settings {
+    tier = "db-f1-micro"
+  }
 
-  location = "us-central1"
-  repository_id = "labdevops"
+  deletion_protection  = "true"
+}
+
+resource "google_artifact_registry_repository" "artifact-playlist" {
+  provider = google-beta
+  repository_id = "playlist"
   description = "Imagens Docker"
   format = "DOCKER"
 }

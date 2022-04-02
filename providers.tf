@@ -10,13 +10,13 @@ terraform {
 # Configura o Provider Google Cloud com o Projeto
 provider "google" {
 
-  project = "labdevopscloud-6aso-fer"
+  project = "hackathon-6aso-grupo04"
   region  = "us-west1"
   zone    = "us-west1-b"
 }
 
 provider "google-beta" {
-  project = "labdevopscloud-6aso-fer"
+  project = "hackathon-6aso-grupo04"
   region  = "us-west1"
   zone    = "us-west1-b"
 }
