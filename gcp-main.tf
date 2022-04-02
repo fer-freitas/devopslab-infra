@@ -7,7 +7,7 @@ resource "google_sql_database" "g4_database_playlist" {
 # See versions at https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/sql_database_instance#database_version
 resource "google_sql_database_instance" "g4_instance_playlist" {
   provider = google
-  name             = "db-playlist"
+  name             = "g4-db-playlist"
   database_version = "MYSQL_8_0"
   settings {
     tier = "db-f1-micro"
@@ -18,7 +18,7 @@ resource "google_sql_database_instance" "g4_instance_playlist" {
 
 resource "google_artifact_registry_repository" "artifact_playlist" {
   provider = google-beta
-  repository_id = "playlist"
+  repository_id = "g4-playlist"
   description = "Imagens Docker"
   format = "DOCKER"
 }
