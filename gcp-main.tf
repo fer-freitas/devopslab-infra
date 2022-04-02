@@ -16,9 +16,9 @@ resource "google_sql_database_instance" "g4_instance_playlist" {
   deletion_protection  = "true"
 }
 
-resource "google_artifact_registry_repository" "artifact_playlist" {
+resource "google_artifact_registry_repository" "my-repo" {
   provider = google-beta
-  repository_id = "g4-playlist"
+  repository_id = "my-repository-playlist"
   description = "Imagens Docker"
   format = "DOCKER"
 }
